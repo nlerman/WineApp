@@ -1,0 +1,52 @@
+<div id="dash_container" ng-controller="WineManager">
+	<div id="header">
+		<ul>
+			<li>
+				<a href="#/location_manager">Select Shelf</a>
+			</li>
+			<li>
+				<a href="#/manage_wine">Manage Wines</a>
+			</li>
+			<li>
+				<a href="#/wine_manager">Go Back</a>
+			</li>
+		</ul>
+	</div>
+	<div id="img">
+		
+	</div>
+	<h2>New Addition</h2>
+	<div id="post_info">
+		<label for="name">Name: </label>
+			<input type="text" name="name" ng-model='new_wine.name'>
+		<label for="year">Year: </label>
+			<input type="text" name="year" ng-model='new_wine.year'>
+		<label for="country">Country: </label>
+			<input type="text" name="country" ng-model='new_wine.country'>
+		<label for="type">Type: </label>
+		<select name="type" ng-model='new_wine.type' ng-options="type.type for type in types_categories.types">
+			<option value="">-- choose type --</option>
+		</select>
+		<label>Or Create New Type:</label>
+		<label>
+			<input type="text" name="type" ng-model='add_new.type'>
+		</label>
+		<label for="category">Category: </label>
+			<select name="category" ng-model='new_wine.category' ng-model='new_wine.type' ng-options="category.category for category in types_categories.categories">
+				<option value="">-- choose category --</option>
+			</select>
+					<label>Or Create New Category:</label>
+		<label>
+			<input type="text" name="Category" ng-model='add_new.category'>
+		</label>
+
+		<label for="price">Price: </label>
+			<input type="text" name="price" ng-model='new_wine.price'>
+<!-- 		<label for="Description">Description: </label>
+			<textarea name="description" ng-model='new_wine.description'></textarea> -->	
+
+		<div>
+			<button class="add" ng-click ="addWine(new_wine)">Add Wine</button>
+		</div>
+	</div>
+</div>

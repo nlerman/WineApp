@@ -1,0 +1,18 @@
+<div id = "container" ng-controller="WineManager">
+	<div>
+		<div id= 'header'>
+			<a class="back" href="#/manage_wine">Back</a>
+		</div><br>
+		
+	<div id='filler'></div>
+
+	<div id = "bin_body" >			
+		<div class="bin" droppable drop="handleDrop" bin="bin" id="bin" >
+				<div id='bricks' >
+					<div ng-repeat="shelf in cabinets">
+							<img  src="{{shelf.type}}" id="{{shelf.id}}"  style="top: {{ shelf.y_cord}}px; left: {{ shelf.x_cord}}px;">
+					</div>
+				</div>
+			</div>
+		</div>
+</div>

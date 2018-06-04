@@ -1,0 +1,27 @@
+<div id="dash_container" ng-controller="WineManager">
+	<div id="header">
+		<ul>
+			<li>
+				<a href="#/location_manager">Select Shelf</a>
+			</li>
+			<li>
+				<a href="#/manage_wine">Manage Wines</a>
+			</li>
+			<li>
+				<a href="#/add_wine">Add Wines</a>
+			</li>
+			<li>
+				<a href="#/" onclick="displayMe()">Go Back</a>
+			</li>
+		</ul>
+	</div>
+	<div id="img">
+		
+	</div>
+	<div id="recent">
+		<h2>Unassinged Wines</h2>
+		<div id='recently_added' ng-repeat='wine in unassigned_wines'>
+			<p  ng-bind = "wine.name"></p><a href="" ng-click="removeWine(wine.id)"> <img src="/pics/trash.png"></a>
+		</div>
+	</div>
+</div>

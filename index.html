@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Angular Basic</title>
+	<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js'></script>
+	<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js'></script>
+	<script type="text/javascript" src='/js/app.js'></script>
+	<script type="text/javascript" src="/js/factories.js"></script>
+	<script type="text/javascript" src="/js/controllers.js"></script>
+	<script type="text/javascript" src='/js/directives.js'></script>
+	<script type="text/javascript" src='/js/create_shelves.js'></script>
+	<link rel="stylesheet" type="text/css" href="/style/style.css">
+</head>
+	<body>
+		<div ng-app='myApp'>
+			<div >
+				<a href="#/shelf_builder" onclick="hideMe()" class="front_link">Shelf Managers</a>  <a href="#/location_manager" onclick="hideMe()" class="front_link">Location Manager</a> <a href="#/wine_manager" onclick="hideMe()" class="front_link">Wine Manager</a>
+			</div>
+			<div ng-view=""></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function hideMe(){
+			var myLinks = document.getElementsByClassName('front_link');
+			for (var i = 0; i < myLinks.length; i++) {
+				myLinks[i].style.display = 'none';
+			}
+		}
+		function displayMe(){
+			var myLinks = document.getElementsByTagName('a');
+			for (var i = 0; i < myLinks.length; i++) {
+				myLinks[i].style.display = '';
+			}
+		}
+	</script>
+</html>

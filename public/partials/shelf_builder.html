@@ -1,0 +1,31 @@
+<div id = "container" ng-controller="Shelfbuilder">
+
+	<div id="header">
+		<a class="back" href="#/" onclick="displayMe()">Back</a>
+	</div>
+	<div id="bulding_blocks">
+		<div ng-repeat="square in shelves.square">
+			<img class= "building" src="/pics/square.png" id="square{{ square.counter}}"  draggable style="top: {{ square.shelf_y}}px; left: {{ square.shelf_x}}px;" ng-click="removeShelf({x: square.shelf_x, data: square})">
+		</div>
+		<div ng-repeat="big_square in shelves.big_square">
+			<img class= "building" src="/pics/big_square.png" id="big_square{{ big_square.counter}}" draggable  style="top: {{ big_square.shelf_y}}px; left: {{ big_square.shelf_x}}px;" ng-click="removeShelf({x: big_square.shelf_x, data: big_square})">
+		</div>
+		<div ng-repeat="rectangle in shelves.rectangle">
+			<img  class= "building" src="/pics/rectangle.png" id="rectangle{{rectangle.counter}}"  draggable  style="top: {{ rectangle.shelf_y}}px; left: {{ rectangle.shelf_x}}px;" ng-click="removeShelf({x: rectangle.shelf_x, data: rectangle})">
+		</div>
+		<div ng-repeat="triangle_rectangle in shelves.triangle_rectangle">
+			<img class= "building" src="/pics/triangle_rectangle.png" id="triangle_rectangle{{triangle_rectangle.counter}}"  draggable style="top: {{ triangle_rectangle.shelf_y}}px; left: {{ triangle_rectangle.shelf_x}}px;" ng-click="removeShelf({x: triangle_rectangle.shelf_x, data: triangle_rectangle})">
+		</div>
+	</div>
+	<div id = "bin_body">				
+			<div class="bin" droppable drop="handleDrop" bin="bin" id="bin" >
+				<div id='bricks' >
+					<div  ng-repeat="brick in shelves.bricks" ondragenter='myOverFunction(this.id)' ondragleave='myLeaveFunction(this.id)' ondrop='myLeaveFunction(this.id)' id = 'brick{{brick}}'class='brick' style='top: {{brick.top}}px; left:{{brick.left}}px '></div>
+				</div>
+			</div>
+		</div>
+		<label  id="cabinet_location">Cabinet location: <input  type='text' ng-model='location'></label>
+		<button id="save_shelves" ng-click="saveShelves(location)">Save Shelves</button>
+		<script type="text/javascript" src='/js/create_shelves.js'></script>
+</div>
+

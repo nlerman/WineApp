@@ -1,0 +1,31 @@
+<div>	
+	<div id = 'container' ng-controller="WineManager">
+		<div id="header">
+			<a class="back" href="#/" onclick="newDoc()">Back</a>
+	</div>
+		
+		<div id ="unassigned_wines" class="bin" droppable drop="handleDropBack()" bin="bin">
+			<h3>Unassigned Wines</h3>
+			<div ng-click="wineInfo(wine)" ng-repeat='wine in unassigned_wines' class='wine' id="{{wine.id}}" draggable >
+				<p ng-bind = 'wine.name' ></p>
+			</div>
+
+		</div>
+		<div class="bin" droppable drop="handleWineDrop()" bin="bin" id="single_shelf" >
+			<h3>Wines on this shelf</h3>
+			<div ng-click="wineInfo(assigned_wine)" ng-repeat='assigned_wine in assigned_wines' class='wine' id="{{assigned_wine.id}}" draggable >
+				<p ng-bind = 'assigned_wine.name' ></p>
+			</div>
+		</div>
+		<div id = "wine_info">
+			<table>
+				<tr>
+					<td ng-bind = 'wine_info.name'></td>
+					<td ng-bind = 'wine_info.origin_country'></td>
+					<td ng-bind = 'wine_info.year'></td>
+					<td ng-bind = 'wine_info.price'></td>
+				</tr>		
+			</table>
+		</div>
+	</div>
+</div>

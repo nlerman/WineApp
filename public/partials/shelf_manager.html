@@ -1,0 +1,26 @@
+<div id = "container" ng-controller="ShelfManager">
+	<div>
+		<div id= 'header'>
+			<a class="back" href="#/" onclick="displayMe()">Back</a>
+		</div><br>
+		<div id = "cabinet_header">
+			<label  ng-repeat="location in built_shelves.location" for="{{location.cabinet_location}}" ng-click="getCabinets({location_id:location.id })"> 
+	 			<input type="radio" name="i" id="{{location.cabinet_location}}" />
+				<div class="btn">{{location.cabinet_location}}</div> 
+			</label>
+		</div>
+	</div>
+	<div id='filler'></div>
+
+	<div id = "bin_body" ng-controller="WineManager">			
+		<div class="bin" droppable drop="handleDrop" bin="bin" id="bin" >
+				<div id='bricks' >
+					<div ng-repeat="shelf in built_cabinets.output.output">
+						<a href="#/add_wine_to_shelf" ng-click='clickedShelf(shelf.id)'>
+							<img  src="{{shelf.type}}" id="{{shelf.id}}"  style="top: {{ shelf.y_cord}}px; left: {{ shelf.x_cord}}px;" onmouseenter='myMouseOverFunction(this.id)' onmouseleave='myMouseLeaveFunction(this.id)'>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
