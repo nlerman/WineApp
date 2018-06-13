@@ -1,0 +1,3 @@
+[submodule "subtest"]
+	path = subtest
+	url = https://github.com/nlerman/subtest.git
